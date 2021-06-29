@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Create A Show</h2>
+            {% if messages %}
+            <div class="error-box">
+                {% for message in messages %}
+                    <p class="messages-error">{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+            <form action="/shows/create" method= 'POST'>
+                {% csrf_token %}
+                Title: <input type="text" name="title">
+                <br>
+                <br>
+                Network: <input type="text" name="network">
+                <br>
+                <br>
+                Release Date: <input type="date" name="release_date">
+                <br>
+                <br>
+                Description: <textarea name="description"></textarea>
+                <br>
+                <br>
+                <input type='submit' value="Create">
+            </form>
+</body>
+</html>

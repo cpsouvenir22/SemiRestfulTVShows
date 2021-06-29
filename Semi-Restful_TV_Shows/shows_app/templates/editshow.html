@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>  
+        <a href="/">Go Back</a> 
+    </p>
+    <h3>Edit Show</h3>
+    {% for message in messages %}
+    <p>{{message}}</p>
+    {% endfor %}
+
+    <form action="update" method="POST">
+        {% csrf_token %}
+        Title: <input type="text" value="{{Show.Title}}" name="title">
+                <br>
+                <br>
+                Network: <input type="text" value='{{Show.Network}}' name="network">
+                <br>
+                <br>
+                Description: <textarea name="description">{{Show.Description}}</textarea>
+                <br>
+                <br>
+                <input type='submit'>
+    </form>
+</body>
+</html>

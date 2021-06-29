@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/">Go Back</a>
+        <h2>View TV Show</h2>
+
+        <table>
+            <tr>
+                <th>Show ID</th>
+                <br>
+                
+                <th>Title</th>
+                <br>
+                
+                <th>Network</th>
+                <br>
+                
+                <th>Release Date</th>
+                <br>
+                
+                <th>Actions</th>
+            </tr>
+
+            <tr>
+                <td>{{ Show.id }}</td>
+                <td>{{Show.Title}}</td>
+                <td>{{Show.Network}}</td>
+                <td>{{ Show.Release_Date}}</td>
+                <td>
+                    <a href="{{Show.id}}/edit">Edit</a>
+                    <a href="{{Show.id}}/delete">Delete</a>
+                </td>
+            </tr>
+            
+        </table>
+        <br><br><br><br><br><br><br><br><br>
+
+        <h4>Last Updated: {{Show.updated_at}}</h4>
+</body>
+</html>
